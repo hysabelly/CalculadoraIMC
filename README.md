@@ -2,6 +2,7 @@
 
 ## Funcionalidades
 - Calcula e apresenta o IMC
+- Apresenta as faixas do IMC
 
 ## Tecnologias utilizadas
 - Dotnet
