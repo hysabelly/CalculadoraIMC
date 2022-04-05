@@ -54,6 +54,17 @@ namespace EstudoDotNet
             {
                 Console.WriteLine("Você está obeso - Obesidade Grau III (mórbida)");
             }
+            double pesoNormal = 0.00;
+            if (imc < 18.50)
+            {
+                pesoNormal = Math.Round ((18.5 - imc), 2);
+                Console.WriteLine("Para chegar ao Peso Normal, você precisa ganhar {0}kg!", pesoNormal);
+            }
+            else if (imc > 24.99)
+            {
+                pesoNormal = Math.Round ((imc - 24.99), 2);
+                Console.WriteLine("Para chegar ao Peso Normal, você precisa perder {0}kg!", pesoNormal);
+            }
 
         }
     }
