@@ -3,6 +3,7 @@
 ## Funcionalidades
 - Calcula e apresenta o IMC
 - Apresenta as faixas do IMC
+- Informa como chegar ao Peso Ideal 
 
 ## Tecnologias utilizadas
 - Dotnet
