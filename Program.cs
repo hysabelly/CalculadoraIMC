@@ -1,4 +1,5 @@
 ﻿using System;
+//classe programa vai pedir o nome, peso e altura
 
 namespace EstudoDotNet
 {
@@ -10,13 +11,10 @@ namespace EstudoDotNet
             string nome = Console.ReadLine();
 
             Console.WriteLine("Digite o seu peso em kg:");
-            float  peso= Convert.ToSingle(Console.ReadLine());
+            double peso = Console.ReadLine();
 
             Console.WriteLine("Digite a sua altura em metros:");
-            float  altura= Convert.ToSingle (Console.ReadLine());
-
-            double imc = Math.Round(peso/(altura*altura),2);
-
+            double altura = Console.ReadLine();
 
             Console.WriteLine("{0}, a sua altura é {1} e seu peso é {2}", nome, altura, peso );
             Console.WriteLine("O seu IMC é {0}", imc);
@@ -65,7 +63,6 @@ namespace EstudoDotNet
                 pesoNormal = Math.Round ((imc - 24.99), 2);
                 Console.WriteLine("Para chegar ao Peso Normal, você precisa perder {0}kg!", pesoNormal);
             }
-
         }
     }
 }
