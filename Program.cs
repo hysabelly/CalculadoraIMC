@@ -1,68 +1,26 @@
-﻿using System;
-//classe programa vai pedir o nome, peso e altura
-
+using System;
+//classe programa que pede o nome, peso e altura e exibe o resultado com o peso ideal.
 namespace EstudoDotNet
 {
     class Program
-    {
-        static void Main(string[] args)
+    { 
+         static void Main(string[] args)
         {
-            Console.WriteLine("Digite seu Nome:");
-            string nome = Console.ReadLine();
+            Console.WriteLine("Insira o seu nome:");
+            string Nome = Console.ReadLine();
 
-            Console.WriteLine("Digite o seu peso em kg:");
-            double peso = Console.ReadLine();
+            Console.WriteLine("Insira sua altura em metros:");
+            double Altura = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Digite a sua altura em metros:");
-            double altura = Console.ReadLine();
+            Console.WriteLine("Insira seu peso em quilogramas:");
+            double Peso = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("{0}, a sua altura é {1} e seu peso é {2}", nome, altura, peso );
-            Console.WriteLine("O seu IMC é {0}", imc);
+            Individuo i1 = new Individuo(nome, altura, peso);
 
-            if(imc<17.00)
-            {
-                Console.WriteLine("Você está muito abaixo do peso.");
-            }
-
-            else if (imc >=17.00 && imc <18.50)
-            {
-                Console.WriteLine("Você está abaixo do peso.");
-            }
-
-            else if(imc>=18.50 && imc <25.00)
-            {
-                Console.WriteLine("Você está no peso normal.");
-            }
-
-            else if (imc >=25.00 && imc <30.00)
-            {
-                Console.WriteLine("Você está acima do peso.");
-            }
-
-            else if (imc >=30.00 && imc <35.00)
-            {
-                Console.WriteLine("Você está obeso - Obesidade Grau I");
-            }
-            else if (imc >=35.00 && imc <40.00)
-            {
-                Console.WriteLine("Você está obeso - Obesidade Grau II (severa)");
-            }
-
-            else 
-            {
-                Console.WriteLine("Você está obeso - Obesidade Grau III (mórbida)");
-            }
-            double pesoNormal = 0.00;
-            if (imc < 18.50)
-            {
-                pesoNormal = Math.Round ((18.5 - imc), 2);
-                Console.WriteLine("Para chegar ao Peso Normal, você precisa ganhar {0}kg!", pesoNormal);
-            }
-            else if (imc > 24.99)
-            {
-                pesoNormal = Math.Round ((imc - 24.99), 2);
-                Console.WriteLine("Para chegar ao Peso Normal, você precisa perder {0}kg!", pesoNormal);
-            }
+            Console.WriteLine("{0}, seu peso é {1}kg, sua altura é {2}m", i1.Nome, i1.Altura, i1.Peso);
+            Console.WriteLine("Seu IMC é {0}", i1.imc);
+            Console.WriteLine(i1.FaixaAtual());
+            Console.WriteLine(i1.PesoIdeal());
         }
     }
 }
