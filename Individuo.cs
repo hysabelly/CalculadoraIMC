@@ -1,5 +1,4 @@
-//classe individuo com calculos de peso, altura e nomepublic class Individuo
-    public class Individuo 
+public class Individuo
 {
     //classe individuo nome, peso, altura e cálculo de IMC.
     public string Nome {get; set;}
