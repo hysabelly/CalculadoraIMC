@@ -7,13 +7,13 @@ namespace EstudoDotNet
          static void Main(string[] args)
         {
             Console.WriteLine("Insira o seu nome:");
-            string Nome = Console.ReadLine();
+            i1.Nome = Console.ReadLine();
 
             Console.WriteLine("Insira sua altura em metros:");
-            double Altura = Convert.ToDouble(Console.ReadLine());
+            i1.Altura = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Insira seu peso em quilogramas:");
-            double Peso = Convert.ToDouble(Console.ReadLine());
+            i1.Peso = Convert.ToDouble(Console.ReadLine());
 
             Individuo i1 = new Individuo(nome, altura, peso);
 
