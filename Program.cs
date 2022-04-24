@@ -15,10 +15,10 @@ namespace EstudoDotNet
             Console.WriteLine("Insira seu peso em quilogramas:");
             i1.Peso = Convert.ToDouble(Console.ReadLine());
 
-            Individuo i1 = new Individuo(nome, altura, peso);
+            Individuo i1 = new Individuo();
 
             Console.WriteLine("{0}, seu peso é {1}kg, sua altura é {2}m", i1.Nome, i1.Altura, i1.Peso);
-            Console.WriteLine("Seu IMC é {0}", i1.imc);
+            Console.WriteLine("Seu IMC é {0}", i1.CalculoImc());
             Console.WriteLine(i1.FaixaAtual());
             Console.WriteLine(i1.PesoIdeal());
         }
