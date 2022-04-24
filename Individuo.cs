@@ -8,42 +8,42 @@ public class Individuo
     public Individuo()
     {
         //public Individuo com string nome, double altura e double peso.
-        Nome = nome;
-        Peso = peso;
-        Altura = altura;
+        Nome = " ";
+        Peso = 0;
+        Altura = 0;
     }
     
      public double CalculoImc()
     {
          
-        double imc = Peso / (Altura * Altura);
-        return Math.Round (imc, 2);
+        double CalculoImc() = Peso / (Altura * Altura);
+        return Math.Round (CalculoImc(), 2);
     } 
 
     public string FaixaAtual()
     {            
             //public string Faixa com retorno do nível onde o usuário está.
-            if(imc<17.00)
+            if(CalculoImc() <17.00)
             {
                 return "Você está muito abaixo do peso!\n";
             }
-            else if (imc >=17.00 && imc <18.50)
+            else if (CalculoImc() >=17.00 && CalculoImc() <18.50)
             {
                 return "Você está abaixo do peso!\n";
             }
-            else if(imc>=18.50 && imc <25.00)
+            else if(CalculoImc()>=18.50 && CalculoImc() <25.00)
             {
                 return "Você está no peso normal!\n";
             }
-            else if (imc >=25.00 && imc <30.00)
+            else if (CalculoImc() >=25.00 && CalculoImc() <30.00)
             {
                 return "Você está acima do peso.\n";
             }
-            else if (imc >=30.00 && imc <35.00)
+            else if (CalculoImc() >=30.00 && CalculoImc() <35.00)
             {
                 return "Você está obeso - Obesidade Grau I\n";
             }
-            else if (imc >=35.00 && imc <40.00)
+            else if (CalculoImc() >=35.00 && CalculoImc() <40.00)
             {
                 return "Você está obeso - Obesidade Grau II (severa)\n";
             }
@@ -58,16 +58,16 @@ public class Individuo
     public double PesoIdeal()
     {
         //public double com o retorno da quantidade necessária de peso pra perder ou ganhar.
-        if(imc < 18.50)
+        if(CalculoImc() < 18.50)
         {
-            double pesoNecessario = ((18.5*Peso)/imc) -Peso;
+            double pesoNecessario = ((18.5*Peso)/CalculoImc()) -Peso;
             Console.WriteLine("Para chegar ao peso ideal, você precisa ganhar:");
             return pesoNecessario;
         }
 
-        else if(imc >= 25)
+        else if(CalculoImc() >= 25)
         {
-            double pesoNecessario = Peso- ((24.99*Peso)/imc);
+            double pesoNecessario = Peso- ((24.99*Peso)/CalculoImc());
             Console.WriteLine("Para chegar ao peso ideal, você precisa perder:");
             return pesoNecessario;
         }
