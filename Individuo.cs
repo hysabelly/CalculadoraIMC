@@ -4,32 +4,21 @@ public class Individuo
     public string Nome {get; set;}
     public double Peso {get; set;}  
     public double Altura {get; set;}
-    public double imc {get => Math.Round(Peso/(Altura*Altura),2);}
 
-    public Individuo(string nome, double altura, double peso)
+    public Individuo()
     {
         //public Individuo com string nome, double altura e double peso.
-        this.Nome = nome;
-        this.Peso = peso;
-        this.Altura = altura;
+        Nome = nome;
+        Peso = peso;
+        Altura = altura;
     }
     
-    /*
-    public void setNome(string nome) 
+     public double CalculoImc()
     {
-        this.Nome = nome;
-    }
-
-    public void setAltura(double altura) 
-    {
-        this.Altura = altura;
-    }
-
-    public void setPeso(double peso) 
-    {
-        this.Peso = peso;
+         
+        double imc = Peso / (Altura * Altura);
+        return Math.Round (imc, 2);
     } 
-    */
 
     public string FaixaAtual()
     {            
@@ -82,6 +71,12 @@ public class Individuo
             Console.WriteLine("Para chegar ao peso ideal, você precisa perder:");
             return pesoNecessario;
         }
-        return "Você já está no peso ideal!";
+        
+        else
+        {
+            PesoIdeal = CalculoImc() * (Altura * Altura);
+            Console.WriteLine("Você já está no peso ideal!");
+        }
+        return Math.Round(PesoIdeal, 2);
     }
 }
